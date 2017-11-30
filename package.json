@@ -10,6 +10,7 @@
     "@rails/webpacker": "^3.0.2",
     "coffeescript": "1.12.7",
     "core-js": "^2.5.1",
+    "intl": "^1.2.5",
     "rxjs": "^5.5.2",
     "ts-loader": "^3.1.1",
     "typescript": "^2.6.1",

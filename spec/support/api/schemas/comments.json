@@ -1,0 +1,17 @@
+{
+  "type": "array",
+  "properties": {
+    "type": "object",
+    "properties": {
+      "id": {"type": "integer"},
+      "message": {"type": "string"},
+      "attachment": {
+        "type": "object",
+        "properties": {
+          "url": {"type": "string"}
+        }
+      }
+    },
+    "required": ["id", "message"]
+  }
+}

@@ -7,22 +7,37 @@ end
 
 
 gem 'rails', '~> 5.1.4'
-gem 'sqlite3'
+gem 'cancancan'
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+gem 'fog-aws'
+gem 'rmagick'
+gem 'pg'
+gem 'devise_token_auth'
 gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'webpacker'
-
+gem 'rack-cors'
+gem 'acts_as_list'
 gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
-gem 'jbuilder', '~> 2.5'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'aasm'
+gem 'dotenv-rails'
+gem 'active_model_serializers'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'capybara', '~> 2.13'
-  gem 'selenium-webdriver'
+  gem 'pry'
+end
+
+group :test do
+  gem 'database_cleaner'
+  gem 'factory_bot_rails'
+  gem 'rspec-rails'
+  gem 'ffaker'
+  gem 'shoulda-matchers'
+  gem 'json_matchers'
+  gem 'rspec-json_expectations'
 end
 
 group :development do
