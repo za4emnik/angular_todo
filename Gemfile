@@ -24,6 +24,7 @@ gem 'turbolinks', '~> 5'
 gem 'aasm'
 gem 'dotenv-rails'
 gem 'active_model_serializers'
+gem 'apipie-rails'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

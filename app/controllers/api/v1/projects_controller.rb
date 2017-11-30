@@ -1,4 +1,5 @@
 class Api::V1::ProjectsController < Api::V1::ApplicationController
+  include ProjectDoc
   load_and_authorize_resource
 
   def index

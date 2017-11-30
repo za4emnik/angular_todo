@@ -1,4 +1,5 @@
 class Api::V1::TasksController < Api::V1::ApplicationController
+  include TaskDoc
   load_and_authorize_resource :project
   load_and_authorize_resource :task, through: :project
 

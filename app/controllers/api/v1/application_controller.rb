@@ -1,7 +1,7 @@
 class Api::V1::ApplicationController < ActionController::API
   include DeviseTokenAuth::Concerns::SetUserByToken
   include CanCan::ControllerAdditions
-  include Api::V1::ExceptionHandler
+  include Concerns::Api::V1::ExceptionHandler
   before_action :authenticate_user!
 
   private

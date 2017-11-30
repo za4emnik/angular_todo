@@ -1,4 +1,5 @@
 class Api::V1::CommentsController < Api::V1::ApplicationController
+  include CommentDoc
   load_and_authorize_resource :project
   load_and_authorize_resource :task, through: :project
   load_and_authorize_resource :comment, through: :task

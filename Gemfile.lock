@@ -58,6 +58,8 @@ GEM
       activerecord (>= 3.0)
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
+    apipie-rails (0.5.5)
+      rails (>= 4.1)
     arel (8.0.0)
     bcrypt (3.1.11)
     bindex (0.5.0)
@@ -267,6 +269,7 @@ DEPENDENCIES
   aasm
   active_model_serializers
   acts_as_list
+  apipie-rails
   byebug
   cancancan
   carrierwave!
