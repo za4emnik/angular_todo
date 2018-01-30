@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :projects do
         resources :tasks do
+          patch 'moveup', on: :member
+          patch 'movedown', on: :member
           resources :comments
         end
       end

@@ -1,2 +1,2 @@
 backend: bin/rails s -p 3000
-frontend: bin/webpack-dev-server
+frontend: sh -c 'cd ../angular-todo && ng serve --port 4200'

@@ -92,4 +92,54 @@ RSpec.describe 'Tasks API', type: :request do
 
     it_behaves_like 'when guest', before: "delete api_v1_project_task_path(project, task)"
   end
+
+  describe 'PATCH /api/v1/project/:id/task/:id/moveup' do
+    let(:last_task_id) { project.tasks.last.id }
+
+    context 'when logged' do
+      subject { patch_with_token moveup_api_v1_project_task_path(project, last_task_id), user }
+
+      before do
+        3.times { FactoryBot.create(:task, project: project) }
+      end
+
+      it 'should move up task by 1' do
+        expect{ subject }.to change{ Task.find(last_task_id).position }.by(-1)
+      end
+
+      it 'returns should be object of task' do
+        subject
+        expect(response).to match_response_schema('task')
+      end
+
+      it_behaves_like 'when logged', before: "subject"
+    end
+
+    it_behaves_like 'when guest', before: "patch moveup_api_v1_project_task_path(project, last_task_id)"
+  end
+
+  describe 'PATCH /api/v1/project/:id/task/:id/movedown' do
+    let(:first_task_id) { project.tasks.first.id }
+
+    context 'when logged' do
+      subject { patch_with_token movedown_api_v1_project_task_path(project, first_task_id), user }
+
+      before do
+        3.times { FactoryBot.create(:task, project: project) }
+      end
+
+      it 'should move down task by 1' do
+        expect{ subject }.to change{ Task.find(first_task_id).position }.by(1)
+      end
+
+      it 'returns should be object of task' do
+        subject
+        expect(response).to match_response_schema('task')
+      end
+
+      it_behaves_like 'when logged', before: "subject"
+    end
+
+    it_behaves_like 'when guest', before: "patch movedown_api_v1_project_task_path(project, first_task_id)"
+  end
 end

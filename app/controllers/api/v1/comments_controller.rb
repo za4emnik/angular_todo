@@ -30,6 +30,6 @@ class Api::V1::CommentsController < Api::V1::ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:message, :remote_attachment_url)
+    params.require(:comment).permit(:message, :attachment)
   end
 end

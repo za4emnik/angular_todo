@@ -21,7 +21,7 @@ class Api::V1::ProjectsController < Api::V1::ApplicationController
   end
 
   def destroy
-    @project.delete
+    @project.destroy
   end
 
   private

@@ -1,8 +1,11 @@
 class Task < ApplicationRecord
   include AASM
 
+  before_create :set_deadline
+
   belongs_to :project
-  has_many :comments, dependent: :destroy
+  has_many :comments, -> { order(created_at: :desc) }, dependent: :destroy
+  acts_as_list scope: :project
 
   validates :name, :aasm_state, presence: true
 
@@ -17,5 +20,9 @@ class Task < ApplicationRecord
     event :to_process do
       transitions from: :completed, to: :in_process
     end
+  end
+
+  def set_deadline
+    self.deadline = (DateTime.tomorrow + 10.hours).iso8601
   end
 end

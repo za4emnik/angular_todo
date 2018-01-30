@@ -25,6 +25,16 @@ class Api::V1::TasksController < Api::V1::ApplicationController
     @task.delete
   end
 
+  def moveup
+    @task.move_higher
+    render_obj @task
+  end
+
+  def movedown
+    @task.move_lower
+    render_obj @task
+  end
+
   private
 
   def task_params

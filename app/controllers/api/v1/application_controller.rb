@@ -8,7 +8,7 @@ class Api::V1::ApplicationController < ActionController::API
 
   def render_obj(obj)
     if obj.errors.any?
-      render_json(obj.errors.full_messages, :accepted)
+      render_json(obj.errors.full_messages, :unprocessable_entity)
     else
       render_json(obj, :ok)
     end

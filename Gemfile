@@ -9,6 +9,7 @@ end
 gem 'rails', '~> 5.1.4'
 gem 'cancancan'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+gem 'carrierwave-base64'
 gem 'fog-aws'
 gem 'rmagick'
 gem 'pg'
