@@ -50,7 +50,7 @@ RSpec.describe 'Comments API', type: :request do
       end
 
       it 'should return created comment' do
-        comment_attributes.delete(:remote_attachment_url)
+        comment_attributes.delete(:attachment)
         expect(parse_json(response)).to include_json(comment_attributes)
       end
 
@@ -72,7 +72,7 @@ RSpec.describe 'Comments API', type: :request do
       end
 
       it 'should return updated comment' do
-        comment_attributes.delete(:remote_attachment_url)
+        comment_attributes.delete(:attachment)
         expect(parse_json(response)).to include_json(comment_attributes)
       end
 

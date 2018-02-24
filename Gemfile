@@ -25,7 +25,6 @@ gem 'aasm'
 gem 'dotenv-rails'
 gem 'active_model_serializers'
 gem 'apipie-rails'
-gem 'rails_12factor'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
