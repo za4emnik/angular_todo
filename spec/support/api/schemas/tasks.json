@@ -1,0 +1,14 @@
+{
+  "type": "array",
+  "properties": {
+    "type": "object",
+    "properties": {
+      "id": {"type": "integer"},
+      "name": {"type": "string"},
+      "deadline": {"type": "string"},
+      "position": {"type": "integer"},
+      "aasm_state": {"type": "string"}
+    },
+    "required": ["id", "name", "deadline", "aasm_state"]
+  }
+}
